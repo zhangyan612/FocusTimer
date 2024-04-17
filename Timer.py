@@ -56,26 +56,29 @@ def countdown(t):
         winsound.Beep(2500, 1000)
 
 root = tk.Tk()
+root.geometry('800x600')  # Set the default window size
+root.configure(bg='black')  # Set the background color to dark
 
-task_label = tk.Label(root, text="Enter Task:")
+task_label = tk.Label(root, text="Enter Task:", bg='black', fg='white')
 task_label.pack()
 
-task_text = tk.Text(root, height=5)
+task_text = tk.Text(root, height=5, bg='grey', fg='white')
 task_text.pack()
 
 duration_var = tk.StringVar(root)
-duration_var.set("20") # default value
+duration_var.set("20")  # default value
 
 duration_option = tk.OptionMenu(root, duration_var, "20", "30")
+duration_option.config(bg='grey', fg='white')  # Set the color of the option menu
 duration_option.pack()
 
-start_button = tk.Button(root, text="Start", command=start_timer)
+start_button = tk.Button(root, text="Start", command=start_timer, bg='grey', fg='white')
 start_button.pack()
 
-pause_button = tk.Button(root, text="Pause/Resume", command=pause_timer)
-stop_button = tk.Button(root, text="Stop", command=stop_timer)
+pause_button = tk.Button(root, text="Pause/Resume", command=pause_timer, bg='grey', fg='white')
+stop_button = tk.Button(root, text="Stop", command=stop_timer, bg='grey', fg='white')
 
-time_label = tk.Label(root, text="", font=("Helvetica", 24))
+time_label = tk.Label(root, text="", font=("Helvetica", 24), bg='black', fg='white')
 time_label.pack()
 
 root.mainloop()
